@@ -38,11 +38,11 @@ const songs = [
 let isPlaying = false;
 let count2 = 0;
 
-const playMusic = () => {
+const playMusic = (counter) => {
   isPlaying = true;
-  if (count2 <= 0) {
+  if (counter <= 0) {
     loadSong(songs[0]);
-    count2++;
+    counter++;
   }
   music.play();
   play.classList.replace('fa-play-circle', 'fa-pause-circle');
@@ -71,14 +71,14 @@ const nextSong = () => {
   songIndex = (songIndex + 1) % songs.length;
   count2 = songIndex;
   loadSong(songs[songIndex]);
-  playMusic();
+  playMusic(count2);
 };
 
 const prevSong = () => {
   songIndex = (songIndex - 1 + songs.length) % songs.length;
   count2 = songIndex;
   loadSong(songs[songIndex]);
-  playMusic();
+  playMusic(count2);
 };
 
 //progress bar js work
@@ -128,9 +128,9 @@ progress_div.addEventListener('click', (event) => {
 });
 function playMusicReal() {
   if (!isPlaying) {
-    playMusic();
+    playMusic(count2);
   } else {
-    pauseMusic();
+    pauseMusic(count2);
   }
 }
 
