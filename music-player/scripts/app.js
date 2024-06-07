@@ -68,16 +68,14 @@ songIndex = 0;
 //loadSong(songs[2]);
 const nextSong = () => {
   songIndex = (songIndex + 1) % songs.length;
-  count2 = songIndex;
   loadSong(songs[songIndex]);
-  playMusic(count2);
+  playMusic(songIndex);
 };
 
 const prevSong = () => {
   songIndex = (songIndex - 1 + songs.length) % songs.length;
-  count2 = songIndex;
   loadSong(songs[songIndex]);
-  playMusic(count2);
+  playMusic(songIndex);
 };
 
 //progress bar js work
