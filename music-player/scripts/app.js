@@ -40,7 +40,7 @@ let count2 = 0;
 
 const playMusic = (counter) => {
   isPlaying = true;
-  if (counter <= 0) {
+  if (counter <= 0 && count2 <= 0) {
     loadSong(songs[counter]);
   }
   music.play();
