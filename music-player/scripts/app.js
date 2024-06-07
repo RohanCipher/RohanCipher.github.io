@@ -42,6 +42,7 @@ const playMusic = (counter) => {
   isPlaying = true;
   if (counter <= 0) {
     loadSong(songs[counter]);
+    counter++;
   }
   music.play();
   play.classList.replace('fa-play-circle', 'fa-pause-circle');
