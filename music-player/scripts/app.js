@@ -126,8 +126,6 @@ progress_div.addEventListener('click', (event) => {
 function playMusicReal() {
   if (!isPlaying) {
     playMusic(count2);
-    count2++;
-    return count2;
   } else {
     pauseMusic();
   }
@@ -140,7 +138,7 @@ function playMusicReal() {
 //     playMusic();
 //   }
 // });
-count2 = play.addEventListener('click', playMusicReal);
+play.addEventListener('click', playMusicReal);
 next.addEventListener('click', nextSong);
 prev.addEventListener('click', prevSong);
 music.addEventListener('ended', nextSong);
