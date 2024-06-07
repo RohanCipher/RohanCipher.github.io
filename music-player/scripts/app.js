@@ -39,10 +39,10 @@ let isPlaying = false;
 let count2 = 0;
 
 const playMusic = (counter) => {
+  isPlaying = true;
   if (counter <= 0) {
     loadSong(songs[counter]);
   }
-  isPlaying = true;
   music.play();
   play.classList.replace('fa-play-circle', 'fa-pause-circle');
   img.classList.add('anime');
