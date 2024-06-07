@@ -52,8 +52,6 @@ const playMusic = (counter) => {
 const pauseMusic = () => {
   isPlaying = false;
   music.pause();
-  const { currentTime, duration } = music;
-  music.currentTime = currentTime;
   play.classList.replace('fa-pause-circle', 'fa-play-circle');
   img.classList.remove('anime');
 };
@@ -131,6 +129,7 @@ progress_div.addEventListener('click', (event) => {
 function playMusicReal() {
   if (!isPlaying) {
     playMusic(count2);
+    count2++;
   } else {
     pauseMusic();
   }
