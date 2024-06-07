@@ -142,7 +142,7 @@ function playMusicReal() {
 //     playMusic();
 //   }
 // });
-play.addEventListener('click', playMusicReal);
+count2 = play.addEventListener('click', playMusicReal);
 next.addEventListener('click', nextSong);
 prev.addEventListener('click', prevSong);
 music.addEventListener('ended', nextSong);
