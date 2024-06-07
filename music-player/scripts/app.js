@@ -41,7 +41,7 @@ let count2 = 0;
 const playMusic = (counter) => {
   isPlaying = true;
   if (counter <= 0) {
-    loadSong(songs[0]);
+    loadSong(songs[counter]);
     counter++;
   }
   music.play();
