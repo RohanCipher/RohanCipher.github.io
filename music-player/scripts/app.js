@@ -130,7 +130,7 @@ function playMusicReal() {
   if (!isPlaying) {
     playMusic(count2);
   } else {
-    pauseMusic();
+    pauseMusic(count2);
   }
 }
 
