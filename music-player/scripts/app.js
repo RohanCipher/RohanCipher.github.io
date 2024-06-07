@@ -36,12 +36,14 @@ const songs = [
 ];
 
 let isPlaying = false;
+let songIndex = 0;
 let count2 = 0;
 
-const playMusic = (counter) => {
+const playMusic = () => {
   isPlaying = true;
-  if (counter <= 0) {
-    loadSong(songs[counter]);
+  if (songIndex <= 0 && count2 == 0) {
+    loadSong(songs[0]);
+    count2++;
   }
   music.play();
   play.classList.replace('fa-play-circle', 'fa-pause-circle');
@@ -64,7 +66,6 @@ const loadSong = (songs) => {
   img.src = strname;
 };
 
-songIndex = 0;
 //loadSong(songs[2]);
 const nextSong = () => {
   songIndex = (songIndex + 1) % songs.length;
@@ -125,7 +126,7 @@ progress_div.addEventListener('click', (event) => {
 });
 function playMusicReal() {
   if (!isPlaying) {
-    playMusic(count2);
+    playMusic();
   } else {
     pauseMusic();
   }
